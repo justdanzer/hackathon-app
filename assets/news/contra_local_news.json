@@ -1,0 +1,18 @@
+{
+    "articles": [
+        {
+                "source": {
+                    "id": null,
+                    "name": "Rush"
+                },
+                "author": "Rush",
+                "title": "TJ MAXX opening new store in Massachusetts",
+                "description": "The Framingham-based retailer’s newest location is slated to open at the CambridgeSide shopping mall in Cambridge on April 14.",
+                "url": "https://whdh.com/news/tj-maxx-opening-new-store-in-massachusetts/",
+                "urlToImage": "https://whdh.com/wp-content/uploads/sites/3/2019/12/191204_tj_maxx.jpg",
+                "publishedAt": "2022-04-10T17:21:11Z",
+                "content": "Test"              
+        }
+
+    ]
+}

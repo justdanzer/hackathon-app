@@ -104,8 +104,8 @@ class FunctionalityController extends GetxController {
 
   loadLocalNews() async {
     String data = await rootBundle.loadString('assets/news/local_news.json');
-    var localHeadlines = await json.decode(data);
-    var news = News.fromJson(localHeadlines);
-    localHeadlines.assignAll(news.articles!);
+    var localNewsData = await json.decode(data);
+    var localnews = News.fromJson(localNewsData);
+    localHeadlines.assignAll(localnews.articles!);
   }
 }

@@ -32,7 +32,7 @@ class _radio_cardState extends State<radio_card> {
     return GestureDetector(
       onTap: () {
         if (kDebugMode) {
-          print('taped');
+          print('tapped');
         }
       },
       child: Container(

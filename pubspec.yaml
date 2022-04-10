@@ -75,6 +75,7 @@ flutter:
   assets:
     - assets/radio/small_radio.json
     - assets/news/local_news.json
+    - assets/news/contra_local_news.json
     
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
