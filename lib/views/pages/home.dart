@@ -7,6 +7,7 @@ import 'package:newsapp/controllers/functionality_controller.dart';
 import 'package:newsapp/controllers/preference_controller.dart';
 import 'package:newsapp/controllers/widget_controller.dart';
 import 'package:newsapp/views/tabs/news_tab.dart';
+import 'package:newsapp/views/tabs/news_local_tab.dart';
 import 'package:newsapp/views/tabs/radio_tab.dart';
 import 'package:newsapp/views/utils/reusable_constents.dart';
 
@@ -38,14 +39,17 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
   @override
   void initState() {
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(length: 3, vsync: this);
     _tabController.addListener(() {
       setState(() {
         if (_tabController.index == 0) {
+          title = "Local";
+          isAddLocatinVisible = true;
+        } else if (_tabController.index == 1) {
           title = "News";
           isAddLocatinVisible = true;
         } else {
-          title = "Radio";
+          title = "Global";
           isAddLocatinVisible = true;
         }
       });
@@ -219,8 +223,9 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               child: TabBarView(
                 controller: _tabController,
                 children: [
-                  new_tab(),
+                  new_local_tab(),
                   radio_tab(),
+                  new_tab(),
                 ],
               ),
             ),
@@ -242,9 +247,9 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               Tab(
                 iconMargin: EdgeInsets.all(0),
                 icon: Icon(
-                  MdiIcons.newspaper,
+                  MdiIcons.mapMarkerRadius
                 ),
-                text: 'News',
+                text: 'Local News',
               ),
               Tab(
                 iconMargin: EdgeInsets.all(0),
@@ -253,6 +258,14 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 ),
                 text: 'Radio',
               ),
+              Tab(
+                iconMargin: EdgeInsets.all(0),
+                icon: Icon(
+                  MdiIcons.newspaper,
+                ),
+                text: 'Top Headline News',
+              ),
+
             ],
           ),
         ),

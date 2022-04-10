@@ -20,6 +20,7 @@ class FunctionalityController extends GetxController {
   var healthHeadlines = [].obs;
   var scienceHeadlines = [].obs;
   var radioStations = [].obs;
+  var localHeadlines = [].obs;
 
   var isLoading = false.obs;
 
@@ -33,6 +34,9 @@ class FunctionalityController extends GetxController {
     super.onInit();
 
     loadRadio();
+    super.onInit();
+
+    loadLocalNews();
     super.onInit();
   }
 
@@ -95,7 +99,13 @@ class FunctionalityController extends GetxController {
     String data = await rootBundle.loadString('assets/radio/small_radio.json');
     var radioData = await json.decode(data);
     var radios = Radio.fromJson(radioData);
-    log('radios: $radios');
     radioStations.assignAll(radios.radioStations!);
+  }
+
+  loadLocalNews() async {
+    String data = await rootBundle.loadString('assets/news/local_news.json');
+    var localHeadlines = await json.decode(data);
+    var news = News.fromJson(localHeadlines);
+    localHeadlines.assignAll(news.articles!);
   }
 }

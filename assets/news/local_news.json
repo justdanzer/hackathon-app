@@ -1,0 +1,45 @@
+{
+    "radioStations": [
+        {
+                "source": {
+                    "id": null,
+                    "name": "WHDH"
+                },
+                "author": "WHDH",
+                "title": "TJ MAXX opening new store in Massachusetts",
+                "description": "The Framingham-based retailer’s newest location is slated to open at the CambridgeSide shopping mall in Cambridge on April 14.",
+                "url": "https://whdh.com/news/tj-maxx-opening-new-store-in-massachusetts/",
+                "urlToImage": "https://whdh.com/wp-content/uploads/sites/3/2019/12/191204_tj_maxx.jpg",
+                "publishedAt": "2022-04-10T17:21:11Z",
+                "content": "Test"              
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "WCVB"
+            },
+            "author": "WCVB",
+            "title": "Man hits, shoots, kills nephew outside Cambridge District Court, DA says",
+            "description": "MEDFORD, Mass. — Authorities say a man who was seeking an extension of a restraining order against his nephew struck him in a Massachusetts courthouse parking lot and then shot him multiple times.",
+            "url": "https://www.wcvb.com/article/fatal-shooting-medford-massachusetts-district-court-mystic-valley-parkway/39667009#",
+            "urlToImage": "https://kubrick.htvapps.com/htv-prod-media.s3.amazonaws.com/images/medfordcourtshooting-1649367951.png?resize=660:*",
+            "publishedAt": "2022-04-10T17:21:11Z",
+            "content": "Test"        
+        },
+
+        {
+            "source": {
+                "id": null,
+                "name": "The Crimson"
+            },
+            "author": "The Crimson",
+            "title": "City of Cambridge Eliminates Local Tax on Recreational Cannabis",
+            "description": "The Cambridge City Council unanimously passed a policy order repealing a three percent “Community Impact Fee” tax on recreational marijuana in a meeting Monday evening.",
+            "url": "https://www.thecrimson.com/article/2022/3/23/cambridge-eliminate-weed-tax/",
+            "urlToImage": "https://s3.amazonaws.com/thumbnails.thecrimson.com/photos/2020/10/19/222359_1346245.jpg.1500x1000_q95_crop-smart_upscale.jpg",
+            "publishedAt": "2022-04-10T17:21:11Z",
+            "content": "Test"        
+        }
+
+    ]
+}

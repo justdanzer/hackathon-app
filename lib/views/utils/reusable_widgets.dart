@@ -123,6 +123,29 @@ Widget getTab(BuildContext context, articles) {
   );
 }
 
+//resuable tabviewer with lists of each different news category
+Widget getLocalTab(BuildContext context, localHeadlines) {
+  final _funController = Get.find<FunctionalityController>();
+  double width = MediaQuery.of(context).size.width;
+  double height = MediaQuery.of(context).size.height;
+  var themeOf = Theme.of(context);
+  return Obx(
+    () => localHeadlines.isEmpty
+        ? getLoading(context)
+        : Container(
+            margin: const EdgeInsets.all(5),
+            child: Scaffold(
+              resizeToAvoidBottomInset: true,
+              body: ListView.builder(
+                  itemCount: localHeadlines.length,
+                  itemBuilder: (context, index) {
+                    return article_card(article: localHeadlines[index]);
+                  }),
+            ),
+          ),
+  );
+}
+
 
 //resuable tabviewer with lists of each different news category
 Widget getRadioTab(BuildContext context, radioStations) {
