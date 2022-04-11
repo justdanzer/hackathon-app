@@ -7,6 +7,7 @@ import 'package:newsapp/controllers/functionality_controller.dart';
 import 'package:newsapp/controllers/preference_controller.dart';
 import 'package:newsapp/views/utils/reusable_constents.dart';
 import 'package:newsapp/views/utils/reusable_widgets.dart';
+import 'package:newsapp/views/tabs/for_you_tab.dart';
 
 class radio_tab extends StatefulWidget {
   const radio_tab({Key? key}) : super(key: key);
@@ -21,7 +22,7 @@ class _radio_tabState extends State<radio_tab>
 
   @override
   void initState() {
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(length: 5, vsync: this);
     super.initState();
   }
 
@@ -63,10 +64,19 @@ class _radio_tabState extends State<radio_tab>
                     indicatorColor: themeOf.primaryColor,
                     tabs: [
                       Tab(
-                        text: "Your Stations",
+                        text: "Local",
                       ),
                       Tab(
-                        text: "What Others Are Saying",
+                        text: "For you",
+                      ),
+                      Tab(
+                        text: "World",
+                      ),
+                      Tab(
+                        text: "Business",
+                      ),
+                      Tab(
+                        text: "Technology",
                       )
                     ],
                   ),
@@ -75,7 +85,10 @@ class _radio_tabState extends State<radio_tab>
                   controller: _tabController,
                   children: [
                     getRadioTab(context, _funController.radioStations),
-                    getRadioTab(context, _funController.radioStations)
+                    for_you_tab(),
+                    Container(),
+                    Container(),
+                    Container(),
                   ],
                 ),
               ),

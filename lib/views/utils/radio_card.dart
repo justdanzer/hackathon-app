@@ -8,6 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:newsapp/controllers/preference_controller.dart';
 import 'package:newsapp/logic/article_model.dart';
+import 'package:newsapp/views/pages/radio_selected.dart';
 
 import 'package:newsapp/views/utils/reusable_constents.dart';
 import 'package:newsapp/views/utils/reusable_widgets.dart';
@@ -31,15 +32,20 @@ class _radio_cardState extends State<radio_card> {
 
     return GestureDetector(
       onTap: () {
-        if (kDebugMode) {
-          print('tapped');
-        }
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => radio_selected(
+              article: article,
+            ),
+          ),
+        );
       },
       child: Container(
-        width: width,
+        width: 400.0,
         margin: const EdgeInsets.fromLTRB(5, 0, 5, 1),
         decoration: BoxDecoration(
-          color: themeOf.cardColor,
+          color: Colors.white,
           borderRadius: BorderRadius.circular(0),
           boxShadow: [
             BoxShadow(
@@ -52,119 +58,12 @@ class _radio_cardState extends State<radio_card> {
             ),
           ],
         ),
-        child: Column(children: [
-          Visibility(
-            visible: article.urlToImage == null ? false : true,
-            child: Container(
-              margin: const EdgeInsets.only(top: 10),
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(
-                    50,
-                  ),
-                ),
-                width: width,
-                child: Image(
-                  image: NetworkImage(article.urlToImage.toString()),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ),
-          gap1(height),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                Visibility(
-                  visible: article.title == null ? false : true,
-                  child: Text(
-                    article.title.toString(),
-                    style: GoogleFonts.roboto(
-                      textStyle: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 19,
-                      ),
-                    ),
-                  ),
-                ),
-                gap1(
-                  height,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        const Icon(
-                          Icons.timelapse,
-                          size: 15,
-                        ),
-                        const SizedBox(
-                          width: 5,
-                        ),
-                        Visibility(
-                          visible: article.publishedAt == null ? false : true,
-                          child: Text(
-                            countDays(article.publishedAt!),
-                            style: GoogleFonts.roboto(
-                              textStyle: const TextStyle(
-                                fontWeight: FontWeight.normal,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        IconButton(
-                          constraints: const BoxConstraints(),
-                          padding: EdgeInsets.zero,
-                          onPressed: () {
-                            setState(() {
-                              article.setLiked();
-                            });
-                          },
-                          icon: article.liked
-                              ? const Icon(Icons.favorite)
-                              : const Icon(
-                                  Icons.favorite_border,
-                                ),
-                        ),
-                        const SizedBox(
-                          width: 15,
-                        ),
-                        IconButton(
-                          constraints: const BoxConstraints(),
-                          padding: EdgeInsets.zero,
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.share_sharp,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        IconButton(
-                        constraints: const BoxConstraints(),
-                        padding: EdgeInsets.zero,
-                        onPressed: () {},
-                        icon: const Icon(
-                            Icons.attach_money,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                      ],
-                    ),
-                  ],
-                )
-              ],
-            ),
-          ),
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Image(
+            alignment: Alignment.center,
+            image: AssetImage(article.image.toString()),
+            height: 200.0,
+          )
         ]),
       ),
     );

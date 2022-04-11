@@ -1,0 +1,32 @@
+{
+    "radioStations": [
+        {
+                "source": {
+                    "id": null,
+                    "name": "WGBH"
+                },
+                "author": "WGBH",
+                "title": "WGBH Boston",
+                "description": "Boston's NPR Station",
+                "url": "wmbr.org",
+                "urlToImage": "https://wmbr.org/images/logo.gif",
+                "publishedAt": "2022-04-10T17:21:11Z",
+                "image": "radio/images/wgbh.png",
+                "content": "Test"              
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "WBZ"
+            },
+            "author": "WBZ",
+            "title": "WBZ Boston News",
+            "description": "Boston's Local News Radio",
+            "url": "https://www.wgbh.org/",
+            "urlToImage": "https://wgbh.brightspotcdn.com/dims4/default/c218621/2147483647/strip/true/crop/800x800+0+0/resize/768x768!/format/jpg/quality/70/?url=https%3A%2F%2Fwgbh-brightspot.s3.amazonaws.com%2F4c%2F04%2F61e9592d4697b94a735319fc19f0%2Fbrand-refresh-socialavatars-cr7584-gbh-youtube-800x800.png",
+            "publishedAt": "2022-04-10T17:21:11Z",
+            "content": "Test",
+            "image": "radio/images/wbz.png"       
+        }
+    ]
+}

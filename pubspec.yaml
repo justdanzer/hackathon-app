@@ -73,7 +73,7 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
-    - assets/radio/small_radio.json
+    - assets/radio/
     - assets/news/local_news.json
     - assets/news/contra_local_news.json
     

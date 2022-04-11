@@ -53,24 +53,24 @@ class _article_cardState extends State<article_card> {
           ],
         ),
         child: Column(children: [
-          Visibility(
-            visible: article.urlToImage == null ? false : true,
-            child: Container(
-              margin: const EdgeInsets.only(top: 10),
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(
-                    50,
-                  ),
-                ),
-                width: width,
-                child: Image(
-                  image: NetworkImage(article.urlToImage.toString()),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ),
+          // Visibility(
+          //   visible: article.urlToImage == null ? false : true,
+          //   child: Container(
+          //     margin: const EdgeInsets.only(top: 10),
+          //     child: Container(
+          //       decoration: BoxDecoration(
+          //         borderRadius: BorderRadius.circular(
+          //           50,
+          //         ),
+          //       ),
+          //       width: width,
+          //       child: Image(
+          //         image: NetworkImage(article.urlToImage.toString()),
+          //         fit: BoxFit.cover,
+          //       ),
+          //     ),
+          //   ),
+          // ),
           gap1(height),
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -148,10 +148,10 @@ class _article_cardState extends State<article_card> {
                           width: 10,
                         ),
                         IconButton(
-                        constraints: const BoxConstraints(),
-                        padding: EdgeInsets.zero,
-                        onPressed: () {},
-                        icon: const Icon(
+                          constraints: const BoxConstraints(),
+                          padding: EdgeInsets.zero,
+                          onPressed: () {},
+                          icon: const Icon(
                             Icons.attach_money,
                           ),
                         ),

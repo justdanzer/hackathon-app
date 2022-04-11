@@ -146,8 +146,6 @@ Widget getLocalTab(BuildContext context, localHeadlines) {
   );
 }
 
-
-
 //resuable tabviewer with lists of each different news category
 Widget getRadioTab(BuildContext context, radioStations) {
   final _funController = Get.find<FunctionalityController>();
@@ -160,13 +158,35 @@ Widget getRadioTab(BuildContext context, radioStations) {
         : Container(
             margin: const EdgeInsets.all(5),
             child: Scaffold(
-              resizeToAvoidBottomInset: true,
-              body: ListView.builder(
-                  itemCount: radioStations.length,
-                  itemBuilder: (context, index) {
-                    return radio_card(article: radioStations[index]);
-                  }),
-            ),
+                resizeToAvoidBottomInset: true,
+                body: Container(
+                  height: height,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        color: Colors.amber,
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: SizedBox(
+                                height: 300.0,
+                                child: ListView.builder(
+                                    padding: EdgeInsets.all(30.0),
+                                    scrollDirection: Axis.horizontal,
+                                    itemCount: radioStations.length,
+                                    itemBuilder: (context, index) {
+                                      return radio_card(
+                                          article: radioStations[index]);
+                                    }),
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                )),
           ),
   );
 }

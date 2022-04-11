@@ -46,16 +46,16 @@ class Radio {
 }
 
 class Article {
-  Article({
-    required this.source,
-    this.author,
-    this.title,
-    this.description,
-    this.url,
-    this.urlToImage,
-    this.publishedAt,
-    this.content,
-  });
+  Article(
+      {required this.source,
+      this.author,
+      this.title,
+      this.description,
+      this.url,
+      this.urlToImage,
+      this.publishedAt,
+      this.content,
+      this.image});
 
   Source? source;
   String? author;
@@ -65,6 +65,7 @@ class Article {
   String? urlToImage;
   DateTime? publishedAt;
   String? content;
+  String? image;
   bool liked = false;
 
   setLiked() {
@@ -72,15 +73,15 @@ class Article {
   }
 
   factory Article.fromJson(Map<String, dynamic> json) => Article(
-        source: Source.fromJson(json["source"]),
-        author: json["author"] == null ? null : json["author"],
-        title: json["title"],
-        description: json["description"] == null ? null : json["description"],
-        url: json["url"],
-        urlToImage: json["urlToImage"] == null ? null : json["urlToImage"],
-        publishedAt: DateTime.parse(json["publishedAt"]),
-        content: json["content"] == null ? null : json["content"],
-      );
+      source: Source.fromJson(json["source"]),
+      author: json["author"] == null ? null : json["author"],
+      title: json["title"],
+      description: json["description"] == null ? null : json["description"],
+      url: json["url"],
+      urlToImage: json["urlToImage"] == null ? null : json["urlToImage"],
+      publishedAt: DateTime.parse(json["publishedAt"]),
+      content: json["content"] == null ? null : json["content"],
+      image: json["image"]);
 
   Map<String, dynamic> toJson() => {
         "source": source!.toJson(),
@@ -91,6 +92,7 @@ class Article {
         "urlToImage": urlToImage == null ? null : urlToImage,
         "publishedAt": publishedAt!.toIso8601String(),
         "content": content == null ? null : content,
+        "image": image
       };
 }
 

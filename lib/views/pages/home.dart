@@ -39,7 +39,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
   @override
   void initState() {
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 5, vsync: this);
     _tabController.addListener(() {
       setState(() {
         if (_tabController.index == 0) {
@@ -105,9 +105,9 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     CircleAvatar(
-                      radius: 50,
-                      backgroundImage: NetworkImage("https://www.placecage.com/640/360")
-                    ),
+                        radius: 50,
+                        backgroundImage:
+                            NetworkImage("https://www.placecage.com/640/360")),
                     getDivider(),
                     Row(
                       children: [
@@ -181,13 +181,12 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   ),
                   Text(
                     'Cambridge, MA',
-                     style: themeOf.textTheme.headline1,
+                    style: themeOf.textTheme.headline1,
                   ),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: 
-                    [
+                    children: [
                       Visibility(
                         visible: isAddLocatinVisible,
                         child: IconButton(
@@ -202,7 +201,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                             size: 23,
                           ),
                         ),
-
                       ),
                       IconButton(
                         onPressed: () {
@@ -224,8 +222,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 controller: _tabController,
                 children: [
                   new_local_tab(),
-                  radio_tab(),
                   new_tab(),
+                  radio_tab(),
+                  new_local_tab(),
+                  new_local_tab(),
                 ],
               ),
             ),
@@ -240,32 +240,43 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             indicatorColor: themeOf.primaryColor,
             labelColor: themeOf.primaryColor,
             labelStyle: TextStyle(
-              fontSize: 17,
-              fontWeight: FontWeight.bold,
+              fontSize: 12,
+              //fontWeight: FontWeight.bold,
             ),
             tabs: [
               Tab(
                 iconMargin: EdgeInsets.all(0),
-                icon: Icon(
-                  MdiIcons.mapMarkerRadius
-                ),
-                text: 'Local News',
+                icon: Icon(MdiIcons.starFourPointsOutline),
+                text: 'For you',
               ),
+              // Tab(
+              //   iconMargin: EdgeInsets.all(0),
+              //   icon: Icon(MdiIcons.mapMarkerRadius),
+              //   text: 'Local News',
+              // ),
+
               Tab(
                 iconMargin: EdgeInsets.all(0),
                 icon: Icon(
-                  MdiIcons.radio
+                  MdiIcons.web,
                 ),
+                text: 'Headlines',
+              ),
+              Tab(
+                iconMargin: EdgeInsets.all(0),
+                icon: Icon(MdiIcons.radio),
                 text: 'Radio',
               ),
               Tab(
                 iconMargin: EdgeInsets.all(0),
-                icon: Icon(
-                  MdiIcons.newspaper,
-                ),
-                text: 'Top Headline News',
+                icon: Icon(MdiIcons.star),
+                text: 'Following',
               ),
-
+              Tab(
+                iconMargin: EdgeInsets.all(0),
+                icon: Icon(MdiIcons.bookshelf),
+                text: 'Newsstand',
+              ),
             ],
           ),
         ),
